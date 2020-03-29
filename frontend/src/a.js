@@ -40,7 +40,7 @@ export default function TitlebarGridList({socket}) {
     });
 
     function optionSelection() {
-        socket.emit('optionSelection', selected)
+        socket.emit('optionSelection', selected, name)
     }
 
     return (
@@ -50,10 +50,10 @@ export default function TitlebarGridList({socket}) {
                     <div className={classes.root}>
                         <GridList cellHeight={180} className={classes.gridList}>
                             {tileData.map(tile => (
-                                <GridListTile key={tile.img} onClick={() => {
+                                <GridListTile key={tile.url} onClick={() => {
                                     tile.quantity ? setSelected(tile) : alert(`unfortunately there are no '${tile.title}' remaining`)
                                 }}>
-                                    <img src={tile.img} alt={tile.title}/>
+                                    <img src={tile.url} alt={tile.title}/>
                                     <GridListTileBar
                                         title={tile.title}
                                         subtitle={<span>Remaining: {tile.quantity}</span>}
@@ -79,8 +79,6 @@ export default function TitlebarGridList({socket}) {
                     <h1>I have put 1 {selected.title} aside for you.</h1>
                     <h1>Stay safe</h1>
                 </div>
-
-
             )}
         </>
     );
