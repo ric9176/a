@@ -8,12 +8,10 @@ class App extends Component {
         super();
         this.state = {
             socket: null,
-            // endpoint: "http://127.0.0.1:8080"
         };
     }
 
     componentDidMount() {
-        const {endpoint} = this.state;
         const host = window.location.hostname === 'localhost' ? "http://127.0.0.1:8080" : window.location.hostname;
         const socket = socketIOClient(host);
         this.setState({socket});

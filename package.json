@@ -5,11 +5,14 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
+    "migrate": "DEBUG='marv:*' node ./db/migrations.js",
     "heroku-postbuild": "cd frontend && yarn && yarn run build"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "marv": "^3.1.0",
+    "marv-pg-driver": "^3.0.0",
     "socket.io": "^2.3.0"
   }
 }

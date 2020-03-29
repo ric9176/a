@@ -59,9 +59,8 @@ io.on("connection", socket => {
 
     socket.on("optionSelection", (selected) => {
         tileData = tileData.map((item) => item.id === selected.id ? { ...item, quantity: item.quantity -1 } : item);
-        console.log('hit');
-        socket.emit("updatedOptions", tileData);
-        // cb()
+        socket.broadcast.emit("updatedOptions", tileData);
+        socket.emit("completed", true);
     });
 
     socket.on("disconnect", () => {
