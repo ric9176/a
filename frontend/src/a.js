@@ -31,9 +31,9 @@ export default function TitlebarGridList({socket}) {
 
     socket.on('updatedOptions', (data) => { setTileData(data) });
 
-    function abc() {
-        alert('done')
-    }
+    // function abc() {
+    //     alert('done')
+    // }
 
     return (
         <div>
