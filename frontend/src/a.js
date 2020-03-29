@@ -62,7 +62,7 @@ export default function TitlebarGridList({socket}) {
                         <div className={classes.root}>
                             <GridList cellHeight={180} className={classes.gridList}>
                                 {tileData.map(tile => (
-                                    <GridListTile key={tile.url} onClick={() => {
+                                    <GridListTile style={{cursor: "pointer"}} key={tile.url} onClick={() => {
                                         tile.quantity ? setSelected(tile) : alert(`unfortunately there are no '${tile.title}' remaining`)
                                     }}>
                                         <img src={tile.url} alt={tile.title}/>
