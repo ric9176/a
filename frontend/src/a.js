@@ -47,7 +47,7 @@ export default function TitlebarGridList({socket}) {
         <>
             {!complete ? (
                 <div style={{display: "flex", "justify-content": "space-between"}}>
-                    <div style={{margin: "0 auto 0 auto", padding: "0px 80px"}}>
+                    <div style={{flex: 1, margin: "0 auto 0 auto", padding: "0px 80px"}}>
                         <h1>Egg Selection</h1>
                         <h5>Note: your name will be stored encrypted and will only be used for egg selection</h5>
                         <p>
@@ -58,7 +58,7 @@ export default function TitlebarGridList({socket}) {
                         Name (please full name so I don't get mixed up): <TextField value={name}
                                                                                     onChange={(e) => setName(e.target.value)}/>
                     </div>
-                    <div style={{margin: "auto"}}>
+                    <div style={{ felx: 1, margin: "30px auto"}}>
                         <div className={classes.root}>
                             <GridList cellHeight={180} className={classes.gridList}>
                                 {tileData.map(tile => (
