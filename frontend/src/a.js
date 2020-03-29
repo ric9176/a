@@ -29,7 +29,7 @@ export default function TitlebarGridList({socket}) {
     const [tileData, setTileData] = useState([]);
     const [name, setName] = useState();
 
-    socket.on('updatedOptions', (data) => { alert('hit'); setTileData(data) });
+    socket.on('updatedOptions', (data) => { setTileData(data) });
 
     function abc() {
         alert('done')
