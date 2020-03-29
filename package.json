@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "migrate": "DEBUG='marv:*' node ./db/migrations.js",
-    "heroku-postbuild": "yarn migrate && cd frontend && yarn && yarn run build"
+    "heroku-postbuild": "cd frontend && yarn && yarn run build"
   },
   "dependencies": {
     "axios": "^0.19.2",
