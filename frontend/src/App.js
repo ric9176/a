@@ -8,7 +8,7 @@ class App extends Component {
         super();
         this.state = {
             socket: null,
-            endpoint: "http://127.0.0.1:4001"
+            endpoint: "http://127.0.0.1:8080"
         };
     }
 
