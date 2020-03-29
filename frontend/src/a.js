@@ -57,6 +57,8 @@ export default function TitlebarGridList({socket}) {
 
                         Name (please full name so I don't get mixed up): <TextField value={name}
                                                                                     onChange={(e) => setName(e.target.value)}/>
+                                    {name.length && <p>Please select an Egg!</p>}
+
                     </div>
                     <div style={{ flex: 1, margin: "30px auto"}}>
                         <div className={classes.root}>
