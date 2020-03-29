@@ -19,7 +19,7 @@ const directory = path.join(process.cwd(), 'db', 'migrations');
 marv.scan(directory, {namespace: 'test1'}, (err, migrations) => {
     if (err) throw err;
     if (migrations.length === 0) throw new Error(`No migrations found in ${directory}`);
-    marv.migrate(migrations, driver({connection: { host, port, user, password, database }}), err => {
+    marv.migrate(migrations, driver({connection: { host, port, user, password, database, ssl: true }}), err => {
         if (err) throw err;
         console.log('Migrations complete');
     });
